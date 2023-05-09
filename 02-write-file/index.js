@@ -5,8 +5,8 @@ console.log('Please enter text: ');
 
 const link = path.join(__dirname, './text.txt');
 
-process.stdout.on('data',(data)=>{
-  let  inputText = data.toString();
+process.stdin.on('data',(data)=>{
+  let  inputText = data.toString().trim();
 
   checkInputText(inputText);
 
@@ -24,7 +24,7 @@ process.on('exit',()=>{
 });
 
 function checkInputText(inputText){
-  if(inputText === 'exit\n'){
+  if(inputText === 'exit'){
     process.exit();
   }
 }
